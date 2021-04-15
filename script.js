@@ -226,6 +226,53 @@ function TransMatrix(A)       //На входе двумерный массив
      }
     return AT;
 }
+// союзная матрица
+function AdjugateMatrix(A)   // A - двумерный квадратный массив
+{                                        
+    var N = A.length, adjA = [];
+    for (var i = 0; i < N; i++)
+     { adjA[ i ] = [];
+       for (var j = 0; j < N; j++)
+        { var B = [], sign = ((i+j)%2==0) ? 1 : -1;
+          for (var m = 0; m < j; m++)
+           { B[m] = [];
+             for (var n = 0; n < i; n++)   B[m][n] = A[m][n];
+             for (var n = i+1; n < N; n++) B[m][n-1] = A[m][n];
+           }
+          for (var m = j+1; m < N; m++)
+           { B[m-1] = [];
+             for (var n = 0; n < i; n++)   B[m-1][n] = A[m][n];
+             for (var n = i+1; n < N; n++) B[m-1][n-1] = A[m][n];
+           }
+          adjA[ i ][j] = sign*Determinant(B);   // Функцию Determinant см. выше
+        }
+     }
+    return adjA;
+}
+
+// обратная матрица
+function InverseMatrix(A)   // A - двумерный квадратный массив
+{   
+    var det = Determinant(A);                // Функцию Determinant см. выше
+    if (det == 0) return false;
+    var N = A.length, A = AdjugateMatrix(A); // Функцию AdjugateMatrix см. выше
+    for (var i = 0; i < N; i++)
+     { for (var j = 0; j < N; j++) A[ i ][j] /= det; }
+    return A;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function enterResult(matrix, res){
     for(i=0; i < matrix.length; i++){
         res[i].value = matrix[i] ;
@@ -301,6 +348,15 @@ function getMassA(masA,masB,masResult,SelOper){
         }
         else if(SelOper == 06){
         // обратная матрица
+        let formMassA = form2Nmatrix(masA, sizeWidthA.value, sizeHiegthA.value);
+        let inverseMasA = InverseMatrix(formMassA);
+        transMasA = [].concat.apply([], inverseMasA).filter(function(a, b, c) {
+            return c.indexOf(a) == b
+        });
+         enterResult(transMasA,masResult)
+
+
+
         }
         else if(SelOper == 07){
         // Транспорирование
