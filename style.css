@@ -1,0 +1,54 @@
+.table{
+    width: 100%;
+}
+.hidden{
+    display: none;
+}
+.getResult{
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+}
+
+input[type=number]{
+    width: 50px;
+}
+.tools{
+    margin: 0 auto;
+    padding: 50px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.matrix{
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    margin: 0 auto;
+}
+.A>input{
+    display: block;
+    margin: 20px 0px;
+}
+.B>input{
+    display: block;
+    margin: 20px 0px;
+}
+.vector_RESULT{
+    margin-top: 30px;
+    background-color: rgb(247, 139, 180);
+    width: 500px;
+    border-radius: 10px;
+    border:2px solid rgb(236, 84, 142);
+    padding: 5px 20px ;
+}
+.info{
+    background-color: rgb(62, 234, 145);
+    width: 500px;
+    border-radius: 10px;
+    border:2px solid rgb(26, 178, 99);
+    margin-bottom: 20px;
+    padding: 5px 20px ;
+}

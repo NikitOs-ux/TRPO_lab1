@@ -1,0 +1,132 @@
+g<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<form>
+      <div class="operation">
+        <select name="" id="selectOperation">
+            <optgroup label="Матрицы">
+                <option value="00">Поэлементное произведение</option>
+                <option value="01">Поэлементное сложение</option>
+                <option value="02">Умножение на скаляр</option>
+                <option value="03">Умножение на вектор</option>
+                <option value="04">Матричное произведение</option>
+                <option value="05">След и определитель</option>
+                <option value="06">Обратная матрица</option>
+                <option value="07">Транспорирование</option>
+            </optgroup>
+            <optgroup label="Вектора">
+                <option value="10">Умножение на скаляр</option>
+                <option value="11">Поэлементое сложение</option>
+                <option value="12">Поэлементное Умножение</option>
+                <option value="13">Умножение на матрицу</option>
+                <option value="14">Скалярное произведение</option>
+                <option value="15">Векторное произведение</option>
+                <option value="16">Длинна вектора</option>
+                <option value="17">Проверка сонаправленности</option>
+                <option value="18">Проверка на ортогональность</option>
+            </optgroup>
+            <optgroup label="Скаляры">
+                <option value="20">Сумма</option>
+                <option value="21">Инверсия</option>
+                <option value="22">Произведение</option>
+                <option value="23">Возведение в степень</option>
+                <option value="24">Вычисление корня</option>
+                <option value="25">Расчет тригонометрических функций</option>
+            </optgroup>
+        </select>
+    </div>
+</form>
+<div class="table">
+    <div class="tools">
+        <div class="Matrix A">
+        <label for="sizeMatrixAwidth">Size Matrix A width</label>
+        <input type="number" id="sizeMatrixAwidth" step="1" min="1" max="5">
+        <label for="sizeMatrixAheight">Size Matrix A height</label>
+        <input type="number" id="sizeMatrixAheight" step="1" min="1" max="5">
+    
+      </div>
+        <div class="Matrix B">
+            <label for="sizeMatrixBwidth">Size Matrix B width</label>
+            <input type="number" id="sizeMatrixBwidth" step="1" min="1" max="5">
+            <label for="sizeMatrixBheight">Size Matrix B height</label>
+            <input type="number" id="sizeMatrixBheight" step="1" min="1" max="5">
+        </div>   
+    </div>
+    <div class="matrix">
+    <div class="table A">
+        <table>
+            <th>Table A</th>
+            
+        </table>
+        
+    </div>
+    <div class="table B">
+        <table>
+            <th>Table B</th>
+            
+        </table>
+        
+    </div>  
+    <div class="table result">
+        <table>
+            <th>Result</th>
+           
+        </table>
+        
+    </div>   
+</div>
+</div>
+
+
+<div class="vectors hidden">
+    <h1>Vectors</h1>
+    <div class="info"></div>
+    <div class="vector_A">
+        <span>a=[</span>
+        <input type="number" name="" id="">
+        <span>,</span>
+        <input type="number" name="" id="">
+        <span>,</span>
+        <input type="number" name="" id="">
+        <span>]</span>
+    </div>
+    <div class="vector_B">
+        <span>b=[</span>
+        <input type="number" name="" id="">
+        <span>,</span>
+        <input type="number" name="" id="">
+        <span>,</span>
+        <input type="number" name="" id="">
+        <span>]</span>
+    </div>
+    <div class="vector_RESULT"></div> 
+</div>
+
+<div class="scalars hidden">
+    <h1>Scalars</h1>
+    <span>a=</span><input type="number" name="" id="scalarA"><br>
+    <span>b=</span><input type="number" name="" id="scalarB"><br>
+    <br><br>
+    <span>Тригонометрическая операция</span><select name="" id="scalarOpt">
+        <option value="0">cos</option>
+        <option value="1">sin</option>
+        <option value="2">tg</option>
+    </select><br>
+    <div class="scalars_RESULT"></div> 
+</div>
+
+
+<div class="getResult">Result</div>
+
+
+<script src="script.js"></script>
+    
+</body>
+</html>
