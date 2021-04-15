@@ -149,7 +149,7 @@ sizeHiegthB.oninput = function(){
         createTable(nameTable,colTable,rowTable);
     } 
 }
-document.querySelector('.getResult').onclick = function(){
+document.querySelector('.btn-lg').onclick = function(){
     var masA = document.querySelectorAll('.A>table>tr>td>input');
     var masB = document.querySelectorAll('.B>table>tr>td>input');
     var masResult = document.querySelectorAll('.result>table>tr>td>input');

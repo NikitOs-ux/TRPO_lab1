@@ -52,3 +52,6 @@ input[type=number]{
     margin-bottom: 20px;
     padding: 5px 20px ;
 }
+button[type=button]{    
+width: 100%;
+}
