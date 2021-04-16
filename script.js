@@ -260,19 +260,6 @@ function InverseMatrix(A)   // A - двумерный квадратный ма�
      { for (var j = 0; j < N; j++) A[ i ][j] /= det; }
     return A;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 function enterResult(matrix, res){
     for(i=0; i < matrix.length; i++){
         res[i].value = matrix[i] ;
