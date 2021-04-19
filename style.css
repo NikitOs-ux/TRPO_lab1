@@ -10,7 +10,6 @@
     height: 50px;
     background-color: aqua;
 }
-
 input[type=number]{
     width: 50px;
 }
@@ -20,7 +19,6 @@ input[type=number]{
     width: 80%;
     display: flex;
     justify-content: space-around;
-    
 }
 .matrix{
     display: flex;

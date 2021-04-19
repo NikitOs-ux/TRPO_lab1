@@ -86,18 +86,27 @@ document.querySelector('#selectOperation').oninput = function(){
         scalars.classList.add('hidden');
 
         if(this.value == 10){
+            vectorInfo.style.opacity = 1;
             vectorInfo.innerHTML = "<b>Умножение на число.</b><br> Введите число на которое нужно умножить в первую ячейку вектора B <br> Почему так? Не важно! Просто сделай и всё";
-            
         }
-        else if(this.value == 13){
-            vectorInfo.innerHTML = "<b>Умножение на вектор.</b><br> Мне лень было подставлять сюда функцию, просто открой такой же пункт в матрицах";
-            
+        else if(this.value == 16){
+            vectorInfo.style.opacity = 1;
+            vectorInfo.innerHTML = "<b>Вектор В вводить не обязательно</b>";
         }
+        else
+            vectorInfo.style.opacity = 0;
     }
     else if(this.value >= 20){
         table.classList.add('hidden');
         vector.classList.add('hidden');
         scalars.classList.remove('hidden');
+        let tgFunc = document.querySelector('.tgFunc');
+        if(this.value == 25){
+            tgFunc.style.opacity = 1;
+        }
+        else{
+            tgFunc.style.opacity = 0;
+        }
     }
 }
 // создание каркаса матрицы по событию oninput
@@ -304,7 +313,8 @@ function getMassA(masA,masB,masResult,SelOper){
             let formMassA = form2Nmatrix(masA, sizeWidthA.value, sizeHiegthA.value)
             let formMassB = form2Nmatrix(masB, sizeWidthB.value, sizeHiegthB.value)
             
-            console.log(MultiplyMatrix(formMassA, formMassB));
+            let itog = MultiplyMatrix(formMassA, formMassB);
+            enterResult(itog,masResult);
         }
         else if(SelOper == 05){
         // След и определитель
@@ -340,10 +350,8 @@ function getMassA(masA,masB,masResult,SelOper){
         transMasA = [].concat.apply([], inverseMasA).filter(function(a, b, c) {
             return c.indexOf(a) == b
         });
+        console.log(transMasA);
          enterResult(transMasA,masResult)
-
-
-
         }
         else if(SelOper == 07){
         // Транспорирование
@@ -461,7 +469,15 @@ function getMassA(masA,masB,masResult,SelOper){
 
            let scalarOpt = document.querySelector('#scalarOpt').value;
            console.log(scalarOpt);
+           if(scalarOpt == 0){
+            scalarsResult.innerHTML = `Ответ: <br>a = ${Math.cos(scalarsA.value)}<br>b = ${Math.cos(scalarsB.value)}`;
+           }
+           if(scalarOpt == 1){
+            scalarsResult.innerHTML = `Ответ: <br>a = ${Math.sin(scalarsA.value)}<br>b = ${Math.sin(scalarsB.value)}`;
+           }
+           if(scalarOpt == 2){
+            scalarsResult.innerHTML = `Ответ: <br>a = ${Math.tan(scalarsA.value)}<br>b = ${Math.tan(scalarsB.value)}`;
+           }
         
         }
     }
-
